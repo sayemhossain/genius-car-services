@@ -1,8 +1,8 @@
 import React from "react";
 import "./Service.css";
 
-const Service = (props) => {
-  const { name, img, description, price } = props.service;
+const Service = ({ service }) => {
+  const { name, img, description, price } = service;
   return (
     <div className="service-container">
       <img src={img} alt="" />
