@@ -4,6 +4,8 @@ import About from "./Pages/About/About";
 import Home from "./Pages/Home/Home/Home";
 import Footer from "./Shared/Footer/Footer";
 import Header from "./Shared/Header/Header";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
 
 function App() {
   return (
