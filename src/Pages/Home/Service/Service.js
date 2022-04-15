@@ -9,6 +9,7 @@ const Service = ({ service }) => {
       <p>{price}</p>
       <h2>Name: {name}</h2>
       <p>{description}</p>
+      <button className="btn btn-danger">Book: {name}</button>
     </div>
   );
 };
