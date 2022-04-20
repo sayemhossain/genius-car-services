@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +15,7 @@ const Login = () => {
 
   return (
     <div className="container w-50 mx-auto my-5">
-      <h3 className="text-center text-danger mb-4">Pleasaae Login</h3>
+      <h3 className="text-center text-danger mb-4">Please Login</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -49,7 +48,7 @@ const Login = () => {
         </Button>
       </Form>
       <p className="mt-2">
-        New to Geius Car?{" "}
+        New to Genius Car?{" "}
         <Link to="/register" className="text-danger text-decoration-none">
           Please Register
         </Link>
