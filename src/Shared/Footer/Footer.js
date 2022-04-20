@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="text-center bg-dark py-5">
       <p className="text-white">
-        <small>Copyright | {year}</small>
+        <small>@Copyright | {year}</small>
       </p>
     </footer>
   );

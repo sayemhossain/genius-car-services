@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../../Img/logo/logo.png";
 const Header = () => {
   return (
-    <Navbar bg="primary" variant="dark" expand="md">
+    <Navbar bg="primary" variant="dark" sticky="top" expand="md">
       <Container>
         <Navbar.Brand href="#home" className="fw-bold">
           <img className="w-50" src={logo} alt="" />
