@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,6 +48,12 @@ const Login = () => {
           Submit
         </Button>
       </Form>
+      <p className="mt-2">
+        New to Geius Car?{" "}
+        <Link to="/register" className="text-danger text-decoration-none">
+          Please Register
+        </Link>
+      </p>
     </div>
   );
 };
