@@ -7,6 +7,7 @@ import Header from "./Shared/Header/Header";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
+import NotFound from "./Shared/NotFound/NotFound";
 
 function App() {
   return (
@@ -14,11 +15,13 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/home" element={<Home></Home>}></Route>
         <Route
           path="/service/:serviceId"
           element={<ServiceDetail></ServiceDetail>}
         ></Route>
         <Route path="/about" element={<About></About>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
