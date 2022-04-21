@@ -8,11 +8,12 @@ const Service = ({ service }) => {
   const navigateToServiceDetails = (id) => {
     navigate(`/service/${id}`);
   };
+
   return (
     <div className="service-container card">
       <img className="mx-auto" src={img} alt="" />
       <p className="text-danger fw-bold mt-2">{price}</p>
-      <h4>Name: {name}</h4>
+      <h4 className="text-primary">{name}</h4>
       <p>
         {description.length > 100
           ? description.slice(0, 150) + "..."

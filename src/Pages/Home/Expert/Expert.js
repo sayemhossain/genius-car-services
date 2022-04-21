@@ -14,8 +14,8 @@ const Expert = ({ expert }) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
           iste molestias porro? Autem, labore?
         </p>
-        <a href="#" className="btn btn-danger">
-          Go somewhere
+        <a href="#" className="btn btn-primary">
+          Hire Me
         </a>
       </div>
     </div>
