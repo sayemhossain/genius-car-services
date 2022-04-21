@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import logo from "../../Img/logo/logo.png";
 const Header = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
-  const logout = () => {
-    signOut(user);
+  const handleLogout = () => {
+    signOut(auth);
   };
   return (
     <Navbar
@@ -35,7 +35,7 @@ const Header = () => {
               About
             </Nav.Link>
             {user ? (
-              <Nav.Link onClick={() => logout}>LogOut</Nav.Link>
+              <Nav.Link onClick={handleLogout}>LogOut</Nav.Link>
             ) : (
               <Nav.Link as={Link} to="/login">
                 Login
