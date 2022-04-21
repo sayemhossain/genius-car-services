@@ -8,7 +8,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 const Register = () => {
   const [agree, setAgree] = useState(false);
   const [createUserWithEmailAndPassword, user] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
