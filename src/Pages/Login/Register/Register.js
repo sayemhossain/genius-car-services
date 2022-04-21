@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
@@ -9,11 +12,14 @@ const Register = () => {
   const [agree, setAgree] = useState(false);
   const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
+    const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
@@ -22,14 +28,12 @@ const Register = () => {
     if (agree) {
       createUserWithEmailAndPassword(email, password);
     }*/
-    // this is another system for terms and condition
-    if (agree) {
-      createUserWithEmailAndPassword(email, password);
-    }
-  };
-  if (user) {
+
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
+    alert("Updated profile");
     navigate("/home");
-  }
+  };
 
   return (
     <div className="container w-50 mx-auto my-5">
