@@ -24,7 +24,6 @@ const Login = () => {
             type="email"
             placeholder="Enter email"
             required
-            re
           />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
