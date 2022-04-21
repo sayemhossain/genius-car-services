@@ -21,7 +21,7 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
   if (user) {
-    navigate(from);
+    navigate(from, { replace: true });
   }
   return (
     <div className="container w-50 mx-auto my-5">
@@ -54,7 +54,7 @@ const Login = () => {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          Login
         </Button>
       </Form>
       <p className="mt-2">
