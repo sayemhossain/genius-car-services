@@ -54,6 +54,9 @@ const Register = () => {
             placeholder="Password"
             required
           />
+          <Form.Group className="mb-3 mt-2" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Accept term and condition" />
+          </Form.Group>
         </Form.Group>
         <Button variant="primary" type="submit">
           Register
@@ -61,7 +64,7 @@ const Register = () => {
       </Form>
       <p className="mt-2">
         Already have an account?
-        <Link to="/login" className="text-danger text-decoration-none">
+        <Link to="/login" className="text-danger text-decoration-none ms-1">
           Please Login
         </Link>
       </p>
