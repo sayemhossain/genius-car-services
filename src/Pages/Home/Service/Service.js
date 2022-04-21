@@ -9,11 +9,15 @@ const Service = ({ service }) => {
     navigate(`/service/${id}`);
   };
   return (
-    <div className="service-container">
-      <img src={img} alt="" />
-      <p>{price}</p>
-      <h2>Name: {name}</h2>
-      <p>{description}</p>
+    <div className="service-container card">
+      <img className="mx-auto" src={img} alt="" />
+      <p className="text-danger fw-bold mt-2">{price}</p>
+      <h4>Name: {name}</h4>
+      <p>
+        {description.length > 100
+          ? description.slice(0, 150) + "..."
+          : description}
+      </p>
       <button
         onClick={() => navigateToServiceDetails(id)}
         className="btn btn-primary"

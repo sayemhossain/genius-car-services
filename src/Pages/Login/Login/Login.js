@@ -49,7 +49,7 @@ const Login = () => {
             placeholder="Password"
             required
           />
-          <p>Error:{error?.message}</p>
+          <p>{error?.message}</p>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
