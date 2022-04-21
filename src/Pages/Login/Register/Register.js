@@ -15,7 +15,10 @@ const Register = () => {
 
     const email = e.target.email.value;
     const password = e.target.password.value;
-    createUserWithEmailAndPassword(email, password);
+    const agree = e.target.terms.value;
+    if (agree) {
+      createUserWithEmailAndPassword(email, password);
+    }
   };
   if (user) {
     navigate("/home");
@@ -55,7 +58,11 @@ const Register = () => {
             required
           />
           <Form.Group className="mb-3 mt-2" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Accept terms and condition" />
+            <Form.Check
+              type="checkbox"
+              name="terms"
+              label="Accept terms and condition"
+            />
           </Form.Group>
         </Form.Group>
         <Button variant="primary" type="submit">
