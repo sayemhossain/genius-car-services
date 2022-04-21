@@ -55,7 +55,7 @@ const Register = () => {
             required
           />
           <Form.Group className="mb-3 mt-2" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Accept term and condition" />
+            <Form.Check type="checkbox" label="Accept terms and condition" />
           </Form.Group>
         </Form.Group>
         <Button variant="primary" type="submit">
