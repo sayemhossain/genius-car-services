@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -6,6 +6,7 @@ import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
+  const [agree, setAgree] = useState(false);
   const [createUserWithEmailAndPassword, user] =
     useCreateUserWithEmailAndPassword(auth);
   const navigate = useNavigate();
@@ -15,7 +16,13 @@ const Register = () => {
 
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const agree = e.target.terms.value;
+
+    // this is one system for terms  and condition
+    /*const agree = e.target.terms.checked;
+    if (agree) {
+      createUserWithEmailAndPassword(email, password);
+    }*/
+    // this is another system for terms and condition
     if (agree) {
       createUserWithEmailAndPassword(email, password);
     }
@@ -59,6 +66,8 @@ const Register = () => {
           />
           <Form.Group className="mb-3 mt-2" controlId="formBasicCheckbox">
             <Form.Check
+              className={agree ? "text-primary" : "text-danger"}
+              onClick={() => setAgree(!agree)}
               type="checkbox"
               name="terms"
               label="Accept terms and condition"
