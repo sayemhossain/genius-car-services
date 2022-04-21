@@ -74,7 +74,7 @@ const Register = () => {
             />
           </Form.Group>
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button disabled={!agree} variant="primary" type="submit">
           Register
         </Button>
       </Form>
