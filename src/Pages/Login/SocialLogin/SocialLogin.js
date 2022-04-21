@@ -11,8 +11,8 @@ import { useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
+  const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, user1, error1] = useSignInWithGithub(auth);
 
   let errorElement;
   if (error || error1) {
@@ -28,6 +28,7 @@ const SocialLogin = () => {
   if (user || user1) {
     navigate("/home");
   }
+
   return (
     <div>
       <div className="d-flex align-items-center">
