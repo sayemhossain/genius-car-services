@@ -8,12 +8,16 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../Loading/Loading";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
-  const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
-  const [signInWithGithub, user1, error1] = useSignInWithGithub(auth);
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
 
+  if (loading || loading1) {
+    return <Loading></Loading>;
+  }
   let errorElement;
   if (error || error1) {
     errorElement = (
