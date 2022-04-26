@@ -19,7 +19,7 @@ const AddService = () => {
 
   return (
     <div style={{ height: "90vh" }} className="w-50 mx-auto">
-      <h3>Please add a service</h3>
+      <h3 className="text-center my-5">Please add a service</h3>
 
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input

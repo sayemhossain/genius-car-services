@@ -29,15 +29,19 @@ const Header = () => {
             <Nav.Link as={Link} to="/home">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/addservice">
-              Add Services
-            </Nav.Link>
-            <Nav.Link as={Link} to="/manage">
-              Manage Serrvices
-            </Nav.Link>
             <Nav.Link as={Link} to="/about">
               About
             </Nav.Link>
+            {user && (
+              <>
+                <Nav.Link as={Link} to="/addservice">
+                  Add Services
+                </Nav.Link>
+                <Nav.Link as={Link} to="/manage">
+                  Manage Serrvices
+                </Nav.Link>
+              </>
+            )}
             {user ? (
               <Nav.Link onClick={handleLogout}>LogOut</Nav.Link>
             ) : (
