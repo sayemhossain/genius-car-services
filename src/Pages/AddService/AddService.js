@@ -8,6 +8,7 @@ const AddService = () => {
   return (
     <div style={{ height: "90vh" }} className="w-50 mx-auto">
       <h3>Please add a service</h3>
+
       <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="mb-2"
@@ -25,7 +26,13 @@ const AddService = () => {
           type="number"
           {...register("price")}
         />
-        <input type="submit" />
+        <input
+          className="mb-2"
+          placeholder="Photo url"
+          type="text"
+          {...register("img")}
+        />
+        <input type="submit" value="Add Service" />
       </form>
     </div>
   );
