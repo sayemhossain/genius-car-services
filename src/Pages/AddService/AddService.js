@@ -6,12 +6,25 @@ const AddService = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div style={{ height: "90vh" }}>
+    <div style={{ height: "90vh" }} className="w-50 mx-auto">
       <h3>Please add a service</h3>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("firstName", { required: true, maxLength: 20 })} />
-        <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-        <input type="number" {...register("age", { min: 18, max: 99 })} />
+      <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
+        <input
+          className="mb-2"
+          placeholder="Enter name"
+          {...register("Name", { required: true, maxLength: 20 })}
+        />
+        <textarea
+          className="mb-2"
+          placeholder="Add a description"
+          {...register("descriotion")}
+        />
+        <input
+          className="mb-2"
+          placeholder="Enter Price"
+          type="number"
+          {...register("price")}
+        />
         <input type="submit" />
       </form>
     </div>
