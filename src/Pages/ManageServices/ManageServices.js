@@ -3,10 +3,14 @@ import useServices from "../../hooks/useServices";
 
 const ManageServices = () => {
   const [services] = useServices();
-  const handleDelete = () => {
-    console.log("deleted");
+
+  const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure?");
     if (proceed) {
+      const url = `http://localhost:5000/service/${id}`;
+      fetch(url, { method: "DELETE" })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
     }
   };
   return (
