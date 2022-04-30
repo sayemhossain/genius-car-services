@@ -14,6 +14,7 @@ import RequireAuth from "./Pages/RequireAuth/RequireAuth";
 import Checkout from "./Pages/Checkout/Checkout";
 import AddService from "./Pages/AddService/AddService";
 import ManageServices from "./Pages/ManageServices/ManageServices";
+import { ToastContainer } from "react-bootstrap";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }
