@@ -38,7 +38,7 @@ const Checkout = () => {
           type="text"
           name="name"
           id=""
-          value={user.displayName}
+          value={user?.displayName}
           placeholder="Name"
           required
           readOnly
@@ -50,7 +50,7 @@ const Checkout = () => {
           type="email"
           name="email"
           id=""
-          value={user.email}
+          value={user?.email}
           placeholder="Enter email"
           required
           disabled

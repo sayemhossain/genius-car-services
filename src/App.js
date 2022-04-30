@@ -15,6 +15,7 @@ import Checkout from "./Pages/Checkout/Checkout";
 import AddService from "./Pages/AddService/AddService";
 import ManageServices from "./Pages/ManageServices/ManageServices";
 import { ToastContainer } from "react-bootstrap";
+import Order from "./Pages/Order/Order";
 
 function App() {
   return (
@@ -49,6 +50,14 @@ function App() {
           element={
             <RequireAuth>
               <Checkout></Checkout>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/orders"
+          element={
+            <RequireAuth>
+              <Order></Order>
             </RequireAuth>
           }
         ></Route>
