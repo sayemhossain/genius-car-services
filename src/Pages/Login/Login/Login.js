@@ -10,7 +10,7 @@ import SocialLogin from "../SocialLogin/SocialLogin";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PageTitle from "../../PageTitle/PageTitle";
-
+import axios from "axios";
 const Login = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
@@ -22,14 +22,19 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    signInWithEmailAndPassword(email, password);
+
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    console.log(data);
+    localStorage.setItem("accessToken", data);
+    navigate(from, { replace: true });
   };
   if (user) {
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   }
   // this is for reset password
   const handleResetPassword = async () => {
